@@ -91,4 +91,6 @@ button:hover {
 .source-code {
   margin-top: 10px;
   margin-bottom: -10px;
+  font-size: 10px;
+  font-style: sans serif;
 }
