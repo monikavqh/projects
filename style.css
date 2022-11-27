@@ -1,0 +1,89 @@
+body {
+  margin: 80px 100px;
+  padding: 30px 50px;
+  border: solid 3px;
+  max-width: 55%;
+}
+
+h3 {
+  margin-left: 80px;
+  margin-top: 25px;
+  font-family: Libre Baskerville;
+  font-weight: bold;
+  font-size: 30px;
+  color: #3b5799;
+}
+
+h1 {
+  margin: 0px 90px;
+  font-size: 60px;
+  color: #5a6275;
+}
+input {
+  text-align: center;
+  font-family: sans-serif;
+  margin-left: 30px;
+}
+input::placeholder {
+  font-size: 10px;
+  font-style: italic;
+}
+
+button {
+  border-radius: 30px;
+  border: solid 1px;
+  margin-left: 10px;
+  padding: 5px 8px;
+  background-color: whitesmoke;
+  color: #5a6275;
+  font-size: 13px;
+}
+button:hover {
+  color: gray;
+}
+.searchbar {
+  border-radius: 50px;
+  border: solid 1px;
+}
+
+.sixteen-degree {
+  font-size: 40px;
+  font-family: sans-serif;
+  color: #5a6275;
+  font-weight: bold;
+  margin-left: 20px;
+}
+
+.date {
+  margin-left: 0px;
+  font-family: Libre Baskerville;
+  color: #5a6275;
+  font-size: 17px;
+}
+
+.actual-date {
+  font-family: "Courier New";
+  font-weight: bolder;
+  color: #3b5799;
+  font-size: 20px;
+}
+
+.cloud-emoji {
+  font-size: 50px;
+}
+.day {
+  margin-top: 0px;
+  font-size: 30px;
+}
+.col {
+  text-align: center;
+  padding: 5px;
+}
+
+.temperature {
+  color: #5a6275;
+}
+
+.current-button {
+  color: #3b5799;
+}
