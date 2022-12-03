@@ -20,8 +20,28 @@ let seconds = now.getSeconds();
 if (seconds < 10) {
   seconds = `0${seconds}`;
 }
+let monthName = [
+  "January",
+  "February",
+  "March",
+  "April",
+  "May",
+  "June",
+  "July",
+  "August",
+  "September",
+  "October",
+  "November",
+  "December",
+];
+let date = now.getDate();
+let month = monthName[now.getMonth()];
+let year = now.getFullYear();
+
 let displayCurrentTime = document.querySelector(".actual-date");
 displayCurrentTime.innerHTML = `${day} ${hours}:${minutes}:${seconds}`;
+let displayCurrentDate = document.querySelector(".date");
+displayCurrentDate.innerHTML = `${date} ${month} ${year}`;
 
 let citySearch = document.querySelector("#search-form");
 citySearch.addEventListener("submit", searchCity);
@@ -56,4 +76,14 @@ function setPosition(position) {
   let unit = "metric";
   let apiUrl = `https://api.openweathermap.org/data/2.5/weather?lat=${lan}&lon=${lon}&units=${unit}&appid=${apiKey}`;
   axios.get(`${apiUrl}`).then(displayWeather);
+}
+
+// unit conversion
+function showFahrenheitTemperature(event) {
+  event.preventDefault();
+  celsiusLink.classList.remove("active");
+  fahrenheitLink.classList.add("active");
+  let temperatureElement = document.querySelector("#degrees");
+  let fahrenheitTemperature = (celsiusTemperature * 9) / 5 + 32;
+  temperatureElement.innerHTML = Math.round(fahrenheitTemperature);
 }
