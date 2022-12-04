@@ -1,3 +1,4 @@
+//date
 let now = new Date();
 
 let weekdayName = [
@@ -43,6 +44,7 @@ displayCurrentTime.innerHTML = `${day} ${hours}:${minutes}:${seconds}`;
 let displayCurrentDate = document.querySelector(".date");
 displayCurrentDate.innerHTML = `${date} ${month} ${year}`;
 
+//search
 let citySearch = document.querySelector("#search-form");
 citySearch.addEventListener("submit", searchCity);
 citySearch.addEventListener("click", searchCity);
@@ -78,12 +80,38 @@ function setPosition(position) {
   axios.get(`${apiUrl}`).then(displayWeather);
 }
 
-// unit conversion
-function showFahrenheitTemperature(event) {
+// Fahrenheit, Celsius conversion
+function convertToFahren(event) {
   event.preventDefault();
-  celsiusLink.classList.remove("active");
-  fahrenheitLink.classList.add("active");
-  let temperatureElement = document.querySelector("#degrees");
-  let fahrenheitTemperature = (celsiusTemperature * 9) / 5 + 32;
-  temperatureElement.innerHTML = Math.round(fahrenheitTemperature);
+  let temperatureElement = document.querySelector(".sixteen-degree");
+  celsiusLink.classList.remove(".active");
+  fahrenheitLink.classList.add(".active");
+  let fahrenheitElement = (celsiusElement * 9) / 5 + 32;
+  temperatureElement.innerHTML = Math.round(fahrenheitElement);
+
 }
+
+function convertToCelsius(event) {
+  event.preventDefault();
+  celsiusLink.classList.add("active");
+  fahrenheitLink.classList.remove("active");
+  let temperatureElement = document.querySelector(".sixteen-degree");
+  temperatureElement.innerHTML = Math.round(celsiusElement);
+}
+
+let celsiusElement = 3;
+
+let fahrenheitLink = document.querySelector("#fahrenheit");
+fahrenheitLink.addEventListener("click", convertToFahren);
+
+let celsiusLink = document.querySelector("#celsius");
+celsiusLink.addEventListener("click", convertToCelsius);
+
+//humidity add!!
+
+let humidityElement = document.querySelector(".humidity");
+let windElement = document.querySelector(".wind-speed");
+
+humidityElement.innerHTML = response.data.temperature.humidity;
+windElement.innerHTML = Math.round(response.data.wind.speed);
+
