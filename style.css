@@ -121,3 +121,7 @@ button:hover {
   font-family: Roboto Slab;
   font-size: 17px;
 }
+.weather-description {
+  font-family: Playfair Display;
+  font-size: 18px;
+}
