@@ -100,3 +100,15 @@ button:hover {
   color: #3b5799;
 
 }
+#celsius {
+  text-decoration: none;
+}
+#fahrenheit {
+  text-decoration: none;
+}
+.humidity {
+  color: #3b5799;
+}
+.wind-speed {
+  color: #3b5799;
+}
