@@ -41,6 +41,9 @@ button {
 button:hover {
   color: gray;
 }
+
+
+
 .searchbar {
   border-radius: 50px;
   border: solid 1px;
@@ -55,7 +58,7 @@ button:hover {
 }
 
 .date {
-  margin-left: 400px;
+  margin-left: 350px;
   font-family: Libre Baskerville;
   color: #5a6275;
   font-size: 17px;
@@ -66,12 +69,9 @@ button:hover {
   font-weight: bolder;
   color: #3b5799;
   font-size: 20px;
-  margin-left: 400px;
+  margin-left: 350px;
 }
 
-.cloud-emoji {
-  font-size: 50px;
-}
 .day {
   margin-top: 0px;
   font-size: 30px;
@@ -83,10 +83,6 @@ button:hover {
 
 .temperature {
   color: #5a6275;
-}
-
-.current-button {
-  color: #3b5799;
 }
 
 .source-code {
@@ -106,9 +102,22 @@ button:hover {
 #fahrenheit {
   text-decoration: none;
 }
+.css-humidity {
+  font-family: Playfair Display;
+  font-size: 18px;
+}
+.css-speed {
+  font-family: Playfair Display;
+  font-size: 18px;
+}
 .humidity {
   color: #3b5799;
+  font-family: Roboto Slab;
+  font-size: 16px;
 }
+
 .wind-speed {
   color: #3b5799;
+  font-family: Roboto Slab;
+  font-size: 17px;
 }

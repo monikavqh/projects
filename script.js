@@ -67,10 +67,7 @@ function displayWeather(response) {
   let wind = response.data.wind.speed;
   let currentWind = document.querySelector(".wind-speed");
   currentWind.innerHTML = ` ${wind} km/h`;
-
-  let description = response.data.weather[0].description;
-  let weatherDescription = document.querySelector(".weather-description");
-
+  document.querySelector(".weather-description").innerHTML = response.data.weather[0].description;
   let emoji = document.querySelector(".emoji-icon");
   emoji.setAttribute(
     "src",
@@ -88,6 +85,7 @@ function searchCity(event) {
   let apiKey = "af01fd994ae220754a5ce37013724a3a";
   let unit = "metric";
   let apiUrl = `https://api.openweathermap.org/data/2.5/weather?q=${city.value}&units=${unit}&appid=${apiKey}`;
+  console.log(axios);
   axios.get(`${apiUrl}`).then(displayWeather);
 }
 
@@ -103,16 +101,18 @@ function setPosition(position) {
 // Fahrenheit, Celsius conversion
 function convertToFahren(event) {
   event.preventDefault();
-  celsiusLink = document.querySelector("#celsius");
-  fahrenheitLink = document.querySelector("#fahrenheit");
+  let temperatureElement = document.querySelector(".sixteen-degree");
+  celsiusLink.classList.remove("active");
+  fahrenheitLink.classList.remove(".active");
   let fahrenheitElement = (celsiusElement * 9) / 5 + 32;
   temperatureElement.innerHTML = Math.round(fahrenheitElement);
-
 }
 
 function convertToCelsius(event) {
   event.preventDefault();
-  celsiusLink = document.querySelector("#celsius");
+  celsiusLink.classList.add(".active");
+  fahrenheitLink.classList.remove(".active");
+  let temperatureElement = document.querySelector(".sixteen-degree");
   temperatureElement.innerHTML = Math.round(celsiusElement);
 }
 
@@ -124,7 +124,7 @@ fahrenheitLink.addEventListener("click", convertToFahren);
 let celsiusLink = document.querySelector("#celsius");
 celsiusLink.addEventListener("click", convertToCelsius);
 
-//humidity add!!
+//humidity + wind
 
 let humidityElement = document.querySelector(".humidity");
 let windElement = document.querySelector(".wind-speed");
