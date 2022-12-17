@@ -72,17 +72,10 @@ button:hover {
   margin-left: 350px;
 }
 
-.day {
-  margin-top: 0px;
-  font-size: 30px;
-}
+
 .col {
   text-align: center;
   padding: 5px;
-}
-
-.temperature {
-  color: #5a6275;
 }
 
 .source-code {
