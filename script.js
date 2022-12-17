@@ -55,10 +55,10 @@ function formatDay(timestamp) {
   return days[day];
 }
 
-//forecast
+
 function displayForecast(response) {
-  console.log(response);
   let forecast = response.data.daily;
+
   let forecastElement = document.querySelector("#forecast");
 
   let forecastHTML = `<div class="row">`;
@@ -189,5 +189,5 @@ celsiusLink.addEventListener("click", convertToCelsius);
 let humidityElement = document.querySelector(".humidity");
 let windElement = document.querySelector(".wind-speed");
 
-humidityElement.innerHTML = response.data.temperature.humidity;
+humidityElement.innerHTML = response.data.temp.humidity;
 windElement.innerHTML = Math.round(response.data.wind.speed);
