@@ -67,10 +67,10 @@ function displayForecast(response) {
       forecastHTML =
         forecastHTML +
         `
-          <div class="col-2">
+          <div class="col">
             <div class="weather-forecast-date">${formatDay(
               forecastDay.dt
-            )}}</div>
+            )}</div>
             <img
               src="http://openweathermap.org/img/wn/${
                 forecastDay.weather[0].icon
@@ -98,7 +98,7 @@ function displayForecast(response) {
 
 function getForecast(coordinates) {
   console.log(coordinates);
-  let apiKey = "af01fd994ae220754a5ce37013724a3a";
+  let apiKey = "5aac6d0188c6f17d6d2bbe6591b6fef0";
   let apiUrl = `https://api.openweathermap.org/data/2.5/onecall?lat=${coordinates.lat}&lon=${coordinates.lon}&appid=${apiKey}&units=metric`;
   axios.get(apiUrl).then(displayForecast);
 }
@@ -106,7 +106,7 @@ function getForecast(coordinates) {
 //search
 let citySearch = document.querySelector("#search-form");
 citySearch.addEventListener("submit", searchCity);
-citySearch.addEventListener("click", searchCity);
+
 
 function displayCurrentLocation() {
   navigator.geolocation.getCurrentPosition(setPosition);
@@ -134,6 +134,7 @@ function displayWeather(response) {
     `http://openweathermap.org/img/wn/${response.data.weather[0].icon}@2x.png`
   );
   emoji.setAttribute("alt", response.data.weather[0].description);
+  getForecast(response.data.coord);
 }
 
 function searchCity(event) {
@@ -176,7 +177,7 @@ function convertToCelsius(event) {
   temperatureElement.innerHTML = Math.round(celsiusElement);
 }
 
-let celsiusElement = 6;
+let celsiusElement = null;
 
 let fahrenheitLink = document.querySelector("#fahrenheit");
 fahrenheitLink.addEventListener("click", convertToFahren);
@@ -189,5 +190,5 @@ celsiusLink.addEventListener("click", convertToCelsius);
 let humidityElement = document.querySelector(".humidity");
 let windElement = document.querySelector(".wind-speed");
 
-humidityElement.innerHTML = response.data.temp.humidity;
-windElement.innerHTML = Math.round(response.data.wind.speed);
+// humidityElement.innerHTML = response.data.temp.humidity;
+// windElement.innerHTML = Math.round(response.data.wind.speed);

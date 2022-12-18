@@ -118,3 +118,31 @@ button:hover {
   font-family: Playfair Display;
   font-size: 18px;
 }
+.weather-forecast-temperature-max {
+  font-family: Roboto Slab;
+  color: #154496;
+  font-size: 20px;
+}
+.weather-forecast-temperature-min {
+  font-family: Roboto Slab;
+  color: cornflowerblue;
+  font-size: 17px;
+}
+.weather-forecast-date {
+  color: #3B5798;
+  font-family: Libre Baskerville;
+  font-weight: 500;
+  
+}
+.temperature-prediction-night {
+  color: cornflowerblue;
+  font-size: smaller;
+}
+.temperature-prediction {
+  color: #154496;
+}
+.weekdays {
+  color: #3B5798;
+  font-family: Libre Baskerville;
+  font-weight: 500;
+}
